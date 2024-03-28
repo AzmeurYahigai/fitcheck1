@@ -21,7 +21,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['createRoutine'])) {
 $workouts = getAllWorkouts();
 
 // Get all saved routines for the logged-in user
-$routines = getAllRoutinesForUser($_SESSION['user_id']);
+$routines = getAllRoutinesForUser(1);
+$routines += getAllRoutinesForUser($_SESSION['user_id']);
 ?>
 
 <!DOCTYPE html>
